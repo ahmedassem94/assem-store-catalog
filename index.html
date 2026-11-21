@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assem Store — ملابس رياضية رجالي</title>
+<meta name="description" content="Assem Store — تراك سوت وسليبر رجالي. تراك 1299 بدل 1850 | سليبر 950 بدل 1200. شحن لكل مصر، والدفع عند الاستلام بعد المعاينة.">
+<link rel="icon" href="images/logo.jpg">
+<style>
+:root{--orange:#f97316;--orange-d:#ea580c;--ink:#1c1917;--muted:#78716c;--bg:#fafaf9;--card:#fff;--line:#e7e5e4;--green:#22c55e;--green-d:#16a34a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:50;background:#111827ee;backdrop-filter:blur(6px);color:#fff}
+.hwrap{max-width:1100px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px}
+.hwrap img{width:44px;height:44px;border-radius:10px;object-fit:cover}
+.hname{font-weight:800;font-size:20px}
+.hsub{font-size:12px;color:#d6d3d1}
+.hwa{margin-inline-start:auto;background:var(--green);color:#fff;font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px;white-space:nowrap}
+.hero{background:linear-gradient(135deg,#111827,#1f2937);color:#fff;text-align:center;padding:44px 16px 36px}
+.hero img{width:92px;height:92px;border-radius:20px;margin:0 auto 14px;object-fit:cover}
+.hero h1{font-size:30px;font-weight:800;margin-bottom:6px}
+.hero p{color:#e7e5e4;font-size:16px}
+.hero .prices{margin:14px auto 4px;font-size:18px;font-weight:700;color:#fdba74}
+.hero .cta{display:inline-block;margin-top:18px;background:var(--green);color:#fff;font-weight:800;padding:13px 30px;border-radius:999px;font-size:17px}
+.trust{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
+.trust span{background:#ffffff1f;border:1px solid #ffffff33;border-radius:999px;padding:5px 14px;font-size:13px}
+nav.cats{position:sticky;top:65px;z-index:40;background:var(--bg);padding:12px 16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+nav.cats a{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:10px 18px;font-weight:700;font-size:15px;text-align:center}
+nav.cats a small{display:block;color:var(--muted);font-weight:400;font-size:12px}
+main{max-width:1100px;margin:0 auto;padding:8px 16px 40px}
+section{margin-top:34px}
+h2.sec{font-size:24px;font-weight:800;margin-bottom:4px}
+p.secsub{color:var(--muted);margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.pimg{position:relative;aspect-ratio:1/1;background:#f5f5f4}
+.pimg img{width:100%;height:100%;object-fit:cover}
+.badges{position:absolute;top:10px;inset-inline-start:10px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.bdg{color:#fff;font-size:12px;font-weight:800;border-radius:999px;padding:3px 10px}
+.bdg.save{background:var(--orange)}
+.bdg.off{background:#dc2626}
+.pbody{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.pname{font-weight:800;font-size:16px}
+.pdesc{color:var(--muted);font-size:13px}
+.priceline{display:flex;align-items:baseline;gap:8px;white-space:nowrap}
+.price{font-size:20px;font-weight:800;color:var(--orange-d)}
+.old{color:var(--muted);text-decoration:line-through;font-size:14px}
+.sizes{display:flex;flex-wrap:wrap;gap:6px}
+.sizes button{border:1.5px solid var(--line);background:#fff;border-radius:9px;padding:5px 11px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+.sizes button.sel{border-color:var(--orange);background:#fff7ed;color:var(--orange-d)}
+.hint{font-size:12px;color:#dc2626;min-height:16px}
+.order{margin-top:auto;background:var(--green);color:#fff;border:none;font-weight:800;font-size:15px;padding:12px;border-radius:12px;cursor:pointer;font-family:inherit;width:100%}
+.order:active{background:var(--green-d)}
+.bundle{background:linear-gradient(135deg,#fff7ed,#ffedd5);border:2px solid var(--orange);border-radius:22px;padding:22px}
+.bundle h2{font-size:24px;font-weight:800}
+.bundle .bprice{font-size:26px;font-weight:800;color:var(--orange-d)}
+.bundle .bold{color:var(--muted);text-decoration:line-through;font-size:17px}
+.bimgs{display:flex;gap:12px;margin:16px 0}
+.bimgs figure{flex:1;text-align:center}
+.bimgs img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px;border:1px solid var(--line)}
+.bimgs figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+.bgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bgrid label{font-size:13px;font-weight:700;display:block;margin-bottom:5px}
+.bgrid select{width:100%;padding:11px;border:1.5px solid var(--line);border-radius:11px;font-family:inherit;font-size:14px;background:#fff}
+.bnote{margin-top:12px;font-size:14px}
+.seephotos{margin-top:10px;font-size:13px;color:var(--muted)}
+.seephotos a{display:inline-block;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 14px;margin-inline-start:6px;font-weight:700;color:var(--ink)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.step b{color:var(--orange-d)}
+table.ship{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+table.ship td,table.ship th{padding:12px 14px;border-bottom:1px solid var(--line);text-align:right;font-size:15px}
+table.ship tr:last-child td{border-bottom:none}
+table.ship .amt{font-weight:800;color:var(--orange-d);white-space:nowrap}
+footer{background:#111827;color:#d6d3d1;text-align:center;padding:28px 16px;margin-top:40px}
+footer .soc{display:flex;gap:10px;justify-content:center;margin:12px 0;flex-wrap:wrap}
+footer .soc a{background:#ffffff1a;border-radius:999px;padding:8px 18px;font-weight:700;color:#fff}
+.floatwa{position:fixed;bottom:18px;inset-inline-start:18px;z-index:60;width:52px;height:52px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 6px 20px #00000040}
+@media(max-width:560px){.price{font-size:18px}.bgrid{grid-template-columns:1fr}.hero h1{font-size:25px}nav.cats{top:61px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="hwrap">
+    <img src="images/logo.jpg" alt="Assem Store">
+    <div><div class="hname">Assem Store</div><div class="hsub">ملابس رياضية رجالي</div></div>
+    <a class="hwa" href="https://wa.me/201149194367?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA%20Assem%20Store">كلّمنا واتساب</a>
+  </div>
+</header>
+
+<div class="hero">
+  <img src="images/logo.jpg" alt="Assem Store">
+  <h1>ملابس رياضية رجالي</h1>
+  <p>تراك سوت وسليبر بخامة مستوردة وسعر واضح — وتقدر تعاين قبل ما تدفع</p>
+  <div class="prices">تراك سوت 1299 بدل 1850 &nbsp;|&nbsp; سليبر 950 بدل 1200</div>
+  <a class="cta" href="https://wa.me/201149194367?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA%20Assem%20Store">اطلب على واتساب</a>
+  <div class="trust">
+    <span>عربون بـ InstaPay أو محفظة على 01149194367</span>
+    <span>الباقي عند الاستلام</span>
+    <span>معاينة قبل دفع الباقي</span>
+    <span>وكل اللي عليك تكتب عنوانك بالتفصيل</span>
+  </div>
+</div>
+
+<nav class="cats">
+  <a href="#slippers">السليبرات<small>23 موديل · 950 بدل 1200</small></a>
+  <a href="#tracks">التراك سوت<small>12 موديل · 1299 بدل 1850</small></a>
+  <a href="#bundle">كومبو الشتا<small>2199 بدل 3050</small></a>
+  <a href="#shipping">الشحن<small>لكل المحافظات</small></a>
+</nav>
+
+<main>
+  <section id="bundle">
+    <div class="bundle">
+      <h2>عرض البلاك فرايداي — كومبو الشتا</h2>
+      <p>ترنج + سليبر + شراب هدية بـ <span class="bprice">2199 جنيه</span> <span class="bold">بدل 3050</span> — وفّر 851 والشراب هدية</p>
+      <p class="bnote">العرض ساري لحد ٣٠ نوفمبر · الشحن منفصل حسب المحافظة</p>
+      <div class="bimgs">
+        <figure><img id="bTrackImg" src="" alt="التراك سوت المختار"><figcaption>التراك سوت المختار</figcaption></figure>
+        <figure><img id="bSlipImg" src="" alt="السليبر المختار"><figcaption>السليبر المختار</figcaption></figure>
+      </div>
+      <div class="bgrid">
+        <div><label>موديل التراك سوت</label><select id="bTrack"></select></div>
+        <div><label>مقاس التراك سوت</label><select id="bTrackSize"></select></div>
+        <div><label>موديل السليبر</label><select id="bSlip"></select></div>
+        <div><label>مقاس السليبر</label><select id="bSlipSize"></select></div>
+      </div>
+      <div class="hint" id="bHint"></div>
+      <button class="order" id="bOrder">اطلب كومبو الشتا واتساب — 2199 جنيه</button>
+      <p class="seephotos">عايز تشوف صور كل الموديلات وانت بتختار؟<a href="#tracks">صور التراك سوت</a><a href="#slippers">صور السليبرات</a></p>
+    </div>
+  </section>
+
+  <section id="slippers">
+    <h2 class="sec">السليبرات</h2>
+    <p class="secsub">23 موديل · 950 جنيه بدل 1200 · اختار المقاس ودوس اطلب</p>
+    <div class="grid" id="slipGrid"></div>
+  </section>
+
+  <section id="tracks">
+    <h2 class="sec">التراك سوت</h2>
+    <p class="secsub">12 موديل · 1299 جنيه بدل 1850 · خامة غطس مستورد معالج ضد الوبرة والانكماش · مقاسات S لحد 3XL</p>
+    <div class="grid" id="trackGrid"></div>
+  </section>
+
+  <section id="howto">
+    <h2 class="sec">إزاي تطلب؟</h2>
+    <p class="secsub">٣ خطوات بس</p>
+    <div class="steps">
+      <div class="step"><b>١ —</b> اختار الموديل والمقاس من الكتالوج ودوس «اطلب واتساب».</div>
+      <div class="step"><b>٢ —</b> ابعت عربون بسيط بـ InstaPay أو محفظة على <b>01149194367</b> عشان نحجزلك طلبك، والباقي عند الاستلام — وتقدر تعاين المنتج قبل ما تدفع الباقي.</div>
+      <div class="step"><b>٣ —</b> اكتب عنوانك بالتفصيل في رسالة الواتساب، والشحن بيوصلك لحد البيت.</div>
+    </div>
+  </section>
+
+  <section id="shipping">
+    <h2 class="sec">أسعار الشحن</h2>
+    <p class="secsub">الشحن منفصل عن سعر المنتج وحسب المحافظة</p>
+    <table class="ship">
+      <tr><td>القاهرة والجيزة والإسكندرية وبورسعيد والوجه البحري</td><td class="amt">100 جنيه</td></tr>
+      <tr><td>المنيا وسوهاج والفيوم وبني سويف وأسيوط</td><td class="amt">120 جنيه</td></tr>
+      <tr><td>الأقصر وقنا والغردقة والبحر الأحمر وأسوان</td><td class="amt">150 جنيه</td></tr>
+      <tr><td>شرم الشيخ ودهب وجنوب سيناء</td><td class="amt">170 جنيه</td></tr>
+    </table>
+  </section>
+</main>
+
+<footer>
+  <div style="font-weight:800;font-size:18px;color:#fff">Assem Store</div>
+  <div>ملابس رياضية رجالي — للطلب واتساب 01149194367</div>
+  <div class="soc">
+    <a href="https://www.facebook.com/profile.php?id=61579006646014">فيسبوك</a>
+    <a href="https://www.instagram.com/assemstore00">انستجرام</a>
+    <a href="https://www.tiktok.com/@assemstore63">تيك توك</a>
+    <a href="https://wa.me/201149194367">واتساب</a>
+  </div>
+  <div style="font-size:13px">© Assem Store — كل الأسعار شاملة العرض الحالي</div>
+</footer>
+
+<a class="floatwa" href="https://wa.me/201149194367?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA%20Assem%20Store" aria-label="واتساب">✆</a>
+
+<script>
+const DATA = {"tracks": [{"name": "تراك سوت أورانج", "price": 1299, "old": 1850, "sizes": ["S", "M", "L", "XL", "2XL", "3XL"], "desc": "هودي أورانج + بنطلون أسود — خامة غطس مستورد معالج ضد الوبرة والانكماش", "img": "images/track-orange.jpg"}, {"name": "تراك سوت أبيض × أسود", "price": 1299, "old": 1850, "sizes": ["S", "M", "L", "XL", "2XL", "3XL"], "desc": "هودي أبيض + بنطلون أسود — خامة غطس مستورد معالج ضد الوبرة والانكماش", "img": "images/track-white-black.jpg"}, {"name": "تراك سوت أزرق × أبيض — نص سوستة", "price": 1299, "old": 1850, "sizes": ["S", "M", "L", "XL", "2XL", "3XL"], "desc": "نص سوستة — خامة غطس مستورد معالج ضد الوبرة والانكماش", "img": "images/track2-bluewhite-halfzip.jpg"}, {"name": "تراك سوت أسود × أبيض — نص سوستة", "price": 1299, "old": 1850, "sizes": ["S", "M", "L", "XL", "2XL", "3XL"], "desc": "نص سوستة — خامة غطس مستورد معالج ضد الوبرة والانكماش", "img": "images/track2-blackwhite-halfzip.jpg"}, {"name": "تراك سوت رمادي × أسود — نص سوستة", "price": 1299, "old": 1850, "sizes": ["S", "M", "L", "XL", "2XL", "3XL"], "desc": "نص سوستة — خامة غطس مستورد معالج ضد الوبرة والانكماش", "img": "images/track2-grayblack-halfzip.jpg"}, {"name": "تراك سوت أسود — سوستة", "price": 1299, "old": 1850, "sizes": ["S", "M", "L", "XL", "2XL", "3XL"], "desc": "سوستة كاملة — خامة غطس مستورد معالج ضد الوبرة والانكماش", "img": "images/track2-black-fullzip.jpg"}, {"name": "تراك سوت كحلي — سوستة", "price": 1299, "old": 1850, "sizes": ["S", "M", "L", "XL", "2XL", "3XL"], "desc": "سوستة كاملة — خامة غطس مستورد معالج ضد الوبرة والانكماش", "img": "images/track2-navy-fullzip.jpg"}, {"name": "تراك سوت أسود × أصفر — سوستة بهودي", "price": 1299, "old": 1850, "sizes": ["S", "M", "L", "XL", "2XL", "3XL"], "desc": "سوستة بهودي — خامة غطس مستورد معالج ضد الوبرة والانكماش", "img": "images/track2-blackyellow-hoodie.jpg"}, {"name": "تراك سوت أزرق × كحلي — سوستة", "price": 1299, "old": 1850, "sizes": ["S", "M", "L", "XL", "2XL", "3XL"], "desc": "سوستة كاملة — خامة غطس مستورد معالج ضد الوبرة والانكماش", "img": "images/track2-bluenavy-fullzip.jpg"}, {"name": "تراك سوت أصفر × أسود — سوستة بهودي", "price": 1299, "old": 1850, "sizes": ["S", "M", "L", "XL", "2XL", "3XL"], "desc": "سوستة بهودي — خامة غطس مستورد معالج ضد الوبرة والانكماش", "img": "images/track2-yellow-hoodie.jpg"}, {"name": "تراك سوت أحمر × أسود — سوستة بهودي", "price": 1299, "old": 1850, "sizes": ["S", "M", "L", "XL", "2XL", "3XL"], "desc": "سوستة بهودي — خامة غطس مستورد معالج ضد الوبرة والانكماش", "img": "images/track2-red-hoodie.jpg"}, {"name": "تراك سوت أزرق × كحلي — سوستة بهودي", "price": 1299, "old": 1850, "sizes": ["S", "M", "L", "XL", "2XL", "3XL"], "desc": "سوستة بهودي — خامة غطس مستورد معالج ضد الوبرة والانكماش", "img": "images/track2-bluenavy-hoodie.jpg"}], "slippers": [{"name": "سليبر أزرق", "price": 950, "old": 1200, "sizes": ["40", "41", "42", "43", "44", "45"], "desc": "", "img": "images/slipper-blue.png"}, {"name": "سليبر أحمر", "price": 950, "old": 1200, "sizes": ["40", "41", "42", "43", "44", "45"], "desc": "", "img": "images/slipper-red.png"}, {"name": "سليبر — تشكيلة ألوان", "price": 950, "old": 1200, "sizes": ["40", "41", "42", "43", "44", "45"], "desc": "اسأل على الألوان المتاحة على واتساب", "img": "images/slipper-collection1.png"}, {"name": "سليبر — موديلات تانية", "price": 950, "old": 1200, "sizes": ["40", "41", "42", "43", "44", "45"], "desc": "", "img": "images/slipper-collection2.jpg"}, {"name": "سليبر مشجر أبيض", "price": 950, "old": 1200, "sizes": ["40", "41", "42", "43", "44", "45"], "desc": "", "img": "images/slipper-floral.jpg"}, {"name": "سليبر منقط أبيض × أسود", "price": 950, "old": 1200, "sizes": ["40", "41", "42", "43", "44", "45"], "desc": "", "img": "images/slipper-dotted.jpg"}, {"name": "سليبر كراك أبيض × رمادي", "price": 950, "old": 1200, "sizes": ["40", "41", "42", "43", "44", "45"], "desc": "", "img": "images/slipper-crack.jpg"}, {"name": "سليبر just do it", "price": 950, "old": 1200, "sizes": ["40", "41", "42", "43", "44", "45"], "desc": "", "img": "images/slipper-black.jpg"}, {"name": "سليبر أبيض × أسود", "price": 950, "old": 1200, "sizes": ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45"], "desc": "", "img": "images/slipper-white-black.jpg"}, {"name": "سليبر أسود × أبيض", "price": 950, "old": 1200, "sizes": ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45"], "desc": "", "img": "images/slipper-black-white.jpg"}, {"name": "سليبر أسود × أسود", "price": 950, "old": 1200, "sizes": ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45"], "desc": "", "img": "images/slipper-all-black.jpg"}, {"name": "سليبر رمادي كامو", "price": 950, "old": 1200, "sizes": ["40", "41", "42", "43", "44", "45"], "desc": "", "img": "images/slipper-grey-camo.jpg"}, {"name": "سليبر مشبح لوجو أبيض", "price": 950, "old": 1200, "sizes": ["40", "41", "42", "43", "44", "45"], "desc": "", "img": "images/slipper-black-grey.jpg"}, {"name": "سليبر أسود جلد تعبان", "price": 950, "old": 1200, "sizes": ["40", "41", "42", "43", "44", "45"], "desc": "", "img": "images/slipper-black-snake.jpg"}, {"name": "سليبر مينت", "price": 950, "old": 1200, "sizes": ["36", "37", "38", "39", "40"], "desc": "", "img": "images/slipper-mint.jpg"}, {"name": "سليبر بينك", "price": 950, "old": 1200, "sizes": ["36", "37", "38", "39", "40"], "desc": "", "img": "images/slipper-rose.jpg"}, {"name": "سليبر كامو أزرق", "price": 950, "old": 1200, "sizes": ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45"], "desc": "", "img": "images/slipper-camo-blue.jpg"}, {"name": "سليبر تاي داي", "price": 950, "old": 1200, "sizes": ["36", "37", "38", "39", "40"], "desc": "", "img": "images/slipper-tiedye.jpg"}, {"name": "سليبر تايجر", "price": 950, "old": 1200, "sizes": ["36", "37", "38", "39", "40"], "desc": "", "img": "images/slipper-leopard-white.jpg"}, {"name": "سليبر بينك فاتح", "price": 950, "old": 1200, "sizes": ["36", "37", "38", "39", "40"], "desc": "", "img": "images/slipper-light-pink.jpg"}, {"name": "سليبر بينك لوجو أبيض", "price": 950, "old": 1200, "sizes": ["36", "37", "38", "39", "40"], "desc": "", "img": "images/slipper-pink-white.jpg"}, {"name": "سليبر موف", "price": 950, "old": 1200, "sizes": ["36", "37", "38", "39", "40"], "desc": "", "img": "images/slipper-lavender.jpg"}, {"name": "سليبر بيبي بلو", "price": 950, "old": 1200, "sizes": ["36", "37", "38", "39", "40"], "desc": "", "img": "images/slipper-turquoise.jpg"}]};
+const WA = "https://wa.me/201149194367?text=";
+const chosen = {};
+function waOpen(msg){ window.location.href = WA + encodeURIComponent(msg); }
+function card(p, key){
+  const save = p.old - p.price;
+  const pct = Math.round((1 - p.price / p.old) * 100);
+  const el = document.createElement("div"); el.className = "card";
+  el.innerHTML = `
+    <div class="pimg"><img loading="lazy" src="${p.img}" alt="${p.name}">
+      <div class="badges"><span class="bdg save">وفّر ${save}</span><span class="bdg off">خصم ${pct}%</span></div></div>
+    <div class="pbody">
+      <div class="pname">${p.name}</div>
+      ${p.desc ? `<div class="pdesc">${p.desc}</div>` : ""}
+      <div class="priceline"><span class="price">${p.price} جنيه</span><span class="old">بدل ${p.old}</span></div>
+      <div class="sizes">${p.sizes.map(s => `<button type="button" data-s="${s}">${s}</button>`).join("")}</div>
+      <div class="hint"></div>
+      <button class="order" type="button">اطلب واتساب — ${p.price} جنيه</button>
+    </div>`;
+  const hint = el.querySelector(".hint");
+  el.querySelectorAll(".sizes button").forEach(b => b.addEventListener("click", () => {
+    el.querySelectorAll(".sizes button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel"); chosen[key] = b.dataset.s; hint.textContent = "";
+  }));
+  el.querySelector(".order").addEventListener("click", () => {
+    if (!chosen[key]) { hint.textContent = "من فضلك اختار المقاس الأول عشان يوصلك في رسالة الواتساب."; return; }
+    waOpen(`عايز أطلب: ${p.name}\nالمقاس: ${chosen[key]}\nالسعر: ${p.price} جنيه\nوهكتب عنواني بالتفصيل هنا:`);
+  });
+  return el;
+}
+const tg = document.getElementById("trackGrid"), sg = document.getElementById("slipGrid");
+DATA.tracks.forEach((p, i) => tg.appendChild(card(p, "t" + i)));
+DATA.slippers.forEach((p, i) => sg.appendChild(card(p, "s" + i)));
+
+/* Bundle */
+const bT = document.getElementById("bTrack"), bTS = document.getElementById("bTrackSize"),
+      bS = document.getElementById("bSlip"), bSS = document.getElementById("bSlipSize"),
+      bTI = document.getElementById("bTrackImg"), bSI = document.getElementById("bSlipImg"),
+      bHint = document.getElementById("bHint");
+DATA.tracks.forEach((p, i) => bT.add(new Option(p.name, i)));
+DATA.slippers.forEach((p, i) => bS.add(new Option(p.name, i)));
+function fillSizes(sel, sizes){ sel.innerHTML = ""; sizes.forEach(s => sel.add(new Option(s, s))); }
+function syncBundle(){
+  const t = DATA.tracks[+bT.value], s = DATA.slippers[+bS.value];
+  bTI.src = t.img; bSI.src = s.img;
+  fillSizes(bTS, t.sizes); fillSizes(bSS, s.sizes);
+}
+bT.addEventListener("change", syncBundle); bS.addEventListener("change", syncBundle);
+syncBundle();
+document.getElementById("bOrder").addEventListener("click", () => {
+  const t = DATA.tracks[+bT.value], s = DATA.slippers[+bS.value];
+  waOpen(`عايز أطلب عرض البلاك فرايداي — كومبو الشتا (2199 جنيه):\nتراك سوت: ${t.name} — مقاس ${bTS.value}\nسليبر: ${s.name} — مقاس ${bSS.value}\n+ شراب هدية\nوهكتب عنواني بالتفصيل هنا:`);
+});
+</script>
+</body>
+</html>
